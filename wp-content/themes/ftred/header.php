@@ -6,7 +6,7 @@
  *
  * @package FT_Red
  */
-?><!DOCTYPE html>
+?><?php if (!is_user_logged_in()) { auth_redirect(); } ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo('charset'); ?>">
