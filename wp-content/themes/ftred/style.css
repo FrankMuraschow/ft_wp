@@ -270,9 +270,8 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
+	color: #ffe496;
 	font-size: 16px;
-	font-size: 1rem;
 	line-height: 1.5;
 }
 
@@ -351,7 +350,7 @@ html {
 *,
 *:before,
 *:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
+	/* box-sizing: inherit; */
 }
 
 body {
@@ -921,4 +920,79 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+
+/* DISCOURSE */
+.profiler-results,
+.ember-view.title {
+	display: none;
+}
+
+.dashboard-stats table th,
+.dashboard-stats.detected-problems {
+	background-color: #200;
+}
+
+.nav-pills>li.active>a, .nav-pills>li>a.active {
+	color: #fcfcfc;
+}
+
+body .overridden input[type="text"], 
+body .overridden input[type="password"], 
+body .overridden input[type="datetime"], 
+body .overridden input[type="datetime-local"], 
+body .overridden input[type="date"], 
+body .overridden input[type="month"], 
+body .overridden input[type="time"], 
+body .overridden input[type="week"], 
+body .overridden input[type="number"], 
+body .overridden input[type="email"], 
+body .overridden input[type="url"], 
+body .overridden input[type="search"], 
+body .overridden input[type="tel"], 
+body .overridden input[type="color"],
+body .overridden input[type="text"]:focus, 
+body .overridden input[type="password"]:focus, 
+body .overridden input[type="datetime"]:focus, 
+body .overridden input[type="datetime-local"]:focus, 
+body .overridden input[type="date"]:focus, 
+body .overridden input[type="month"]:focus, 
+body .overridden input[type="time"]:focus, 
+body .overridden input[type="week"]:focus, 
+body .overridden input[type="number"]:focus, 
+body .overridden input[type="email"]:focus, 
+body .overridden input[type="url"]:focus, 
+body .overridden input[type="search"]:focus, 
+body .overridden input[type="tel"]:focus, 
+body .overridden input[type="color"]:focus {
+	color: #200;
+}
+
+body input[type="text"]:focus, 
+body input[type="password"]:focus, 
+body input[type="datetime"]:focus, 
+body input[type="datetime-local"]:focus, 
+body input[type="date"]:focus, 
+body input[type="month"]:focus, 
+body input[type="time"]:focus, 
+body input[type="week"]:focus, 
+body input[type="number"]:focus, 
+body input[type="email"]:focus, 
+body input[type="url"]:focus, 
+body input[type="search"]:focus, 
+body input[type="tel"]:focus, 
+body input[type="color"]:focus {
+	color: #FFE496;
+	border-color: #FFE496;
+	outline: 0;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.3),0 0 8px #FFE496;
+}
+
+.ember-application button, 
+.ember-application input[type="button"], 
+.ember-application input[type="reset"], 
+.ember-application input[type="submit"] {
+	box-shadow: none;
+	text-shadow: none;
 }
