@@ -125,6 +125,7 @@ sub {
 
 img {
 	border: 0;
+	vertical-align: middle;
 }
 
 svg:not(:root) {
@@ -232,7 +233,6 @@ td, th {
  --------------------------------------------------------------*/
 body, button, input, select, textarea {
 	color: #ffe496;
-	font-size: 16px;
 	line-height: 1.5;
 }
 
@@ -293,6 +293,7 @@ big {
  --------------------------------------------------------------*/
 html {
 	box-sizing: border-box;
+	font-size: 14px;
 }
 
 *, *:before, *:after {/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
@@ -300,7 +301,7 @@ html {
 }
 
 body {
-	background: url(/wp-content/themes/ftred/img/bg_5.png);	
+	background: url(/wp-content/themes/ftred/img/Background.png);	
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -358,13 +359,37 @@ table {
 /*--------------------------------------------------------------
  3.1 Elements - FT Customization
  --------------------------------------------------------------*/
+
+html {
+	background: none;
+}
+html, body {
+	/*height: 100%;*/
+	overflow: auto;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+
+#page {
+	height: calc(100% - 281px);
+}
+
+
 #ft-header-banner {
-	width: 90%;
-	margin-left: 5%;
 	text-align: center;
 	background: transparent;
 	position: relative;
 	z-index: 2;
+	margin-bottom: -7px;
+}
+
+#main-outlet {
+	padding-top: 55px;
+}
+
+.alert {	
+	background: rgba(62, 0, 0, .75);
+	margin-bottom: 0;
 }
 
 #ft-header-banner img {
@@ -374,30 +399,53 @@ table {
 }
 
 #content {
-	background: #400;
-	width: 90%;
-	margin-left: 5%;
+	min-height: 100%;
+	/*width: 90%;*/
+	margin-left: auto;
+	margin-right: auto;
+	background: -moz-linear-gradient(left,  rgba(68,0,0,0.75) 0%, rgba(64,0,4,0.85) 50%, rgba(68,0,0,0.75) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(68,0,0,0.75)), color-stop(50%,rgba(64,0,4,0.85)), color-stop(100%,rgba(68,0,0,0.75))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(68,0,0,0.75) 0%,rgba(64,0,4,0.85) 50%,rgba(68,0,0,0.75) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(68,0,0,0.75) 0%,rgba(64,0,4,0.85) 50%,rgba(68,0,0,0.75) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(68,0,0,0.75) 0%,rgba(64,0,4,0.85) 50%,rgba(68,0,0,0.75) 100%); /* IE10+ */
+	background: linear-gradient(to right,  rgba(68,0,0,0.75) 0%,rgba(64,0,4,0.85) 50%,rgba(68,0,0,0.75) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf440000', endColorstr='#bf440000',GradientType=1 ); /* IE6-9 */
 }
+
+footer.site-footer {
+	display: none;
+}
+
 /*--------------------------------------------------------------
  4.0 Forms
  --------------------------------------------------------------*/
 button, input[type="button"], input[type="reset"], input[type="submit"] {
 	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
+	border-color: rgba(255, 228, 150, .5);
+	border-radius: 1px;
+	background: #200;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
+	color: rgb(255, 228, 150);
 	font-size: 12px;
 	font-size: 0.75 rem;
 	line-height: 1;
-	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	/*padding: .6em 1em .4em;*/
+	/*text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);*/
 }
 
-button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+button:hover, 
+input[type="button"]:hover, 
+input[type="reset"]:hover, 
+input[type="submit"]:hover {
+	border-color: rgba(255, 228, 150, .75);
+}
+
+.wmd-button:hover {
+	background-color: #200;
+}
+
+.badge-groupings li {
+	border-color: transparent transparent rgba(255, 228, 150, .25) transparent;
 }
 
 button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active {
@@ -444,11 +492,11 @@ nav a:hover, nav a:active {
 }
 
 a {
-	color: rgb(255, 228, 150);
+	color: #fff;
 }
 
 a:visited {
-	color: rgb(255, 228, 150);
+	color: #fff;
 }
 
 a:hover, a:focus, a:active {
@@ -816,16 +864,144 @@ embed, iframe, object {
 	background-color: #200;
 }
 
-.nav-pills > li.active > a, .nav-pills > li > a.active {
+.nav-pills > li.active > a, 
+.nav-pills > li > a.active,
+{
 	color: #fcfcfc;
 }
 
-.nav-pills > li > a:hover {
-	color: #fff;
+.nav-pills, 
+.nav-stacked {
+	margin: 0 10px;
 }
 
-body .overridden input[type="text"], body .overridden input[type="password"], body .overridden input[type="datetime"], body .overridden input[type="datetime-local"], body .overridden input[type="date"], body .overridden input[type="month"], body .overridden input[type="time"], body .overridden input[type="week"], body .overridden input[type="number"], body .overridden input[type="email"], body .overridden input[type="url"], body .overridden input[type="search"], body .overridden input[type="tel"], body .overridden input[type="color"], body .overridden input[type="text"]:focus, body .overridden input[type="password"]:focus, body .overridden input[type="datetime"]:focus, body .overridden input[type="datetime-local"]:focus, body .overridden input[type="date"]:focus, body .overridden input[type="month"]:focus, body .overridden input[type="time"]:focus, body .overridden input[type="week"]:focus, body .overridden input[type="number"]:focus, body .overridden input[type="email"]:focus, body .overridden input[type="url"]:focus, body .overridden input[type="search"]:focus, body .overridden input[type="tel"]:focus, body .overridden input[type="color"]:focus, .content-list ul li a:hover {
+.select2-results {
+	margin: 4px 0;
+	padding-left: 0px;
+}
+
+/* THE BIG BUTTON HOVER */
+
+.btn:hover, 
+.btn[href]:hover,
+.nav-stacked > li:hover,
+.nav-stacked > li > a:hover, 
+.admin-controls .nav.nav-pills li.active a, 
+.admin-controls .nav.nav-pills li.active a:hover,
+.admin-nav li a.active,
+.nav-pills > li > a:hover,
+.nav-pills > li > a.active,
+.nav-pills > li.active > a, 
+.content-list ul li a:hover,
+.list-controls .category-dropdown-menu .badge-wrapper.bar:hover,
+.list-controls .category-dropdown-menu .badge-category.home:hover,
+.wmd-button:hover,
+.select2-results li:hover,
+.select2-container-multi .select2-choices, 
+.d-header .icons .icon:hover,
+nav.post-controls button:hover,
+nav.post-controls button.like:hover,
+nav.post-controls button.create:hover,
+.dashboard-stats.detected-problems .problem-messages .btn:hover,
+.topic-list .sortable:hover,
+body .bootbox.modal .modal-footer a.btn-primary:hover,
+.select2-container-multi .select2-choices .select2-search-choice:hover  {
+	background-color: rgb(255, 242, 203);
 	color: #200;
+}
+
+.settings .setting .setting-value .select2-container-multi .select2-choices {
+	background: #200;
+}
+
+
+.select2-container-multi .select2-choices .select2-search-choice {
+	background: #600;
+	border: rgba(255, 228, 150,.5);	
+	color: rgb(255, 228, 150);	
+}
+
+.settings .setting .input-setting-list li.select2-search-choice .select2-search-choice-close {
+	background: rgb(255, 228, 150);
+}
+
+.container.posts {
+	/*background: #400;*/
+}
+
+nav.post-controls button.like:hover {
+	color: #fa6c8d;
+}
+
+
+
+.wmd-button:hover,
+.select2-results li:hover {
+	/*background-color: #400;*/
+}
+
+#reply-control .wmd-controls #wmd-input, 
+#reply-control .wmd-controls #wmd-preview-scroller, 
+#reply-control .wmd-controls #wmd-preview {
+	color: #fff;
+	background-color: #400;	
+}
+
+#reply-control .contents .form-element .select2-container a {
+}
+
+#reply-control .contents #wmd-preview {
+	border: 1px dashed #ffe496;
+}
+
+.badge-wrapper.bar span.badge-category,
+.badge-wrapper.bar span.badge-category:hover  {
+	color: inherit !important;
+}
+
+.list-controls .category-dropdown-menu .badge-wrapper.bar,
+.list-controls .category-dropdown-menu .badge-category.home 
+{
+	width: 100%;
+  	padding-top: 5px;
+  	padding-bottom: 5px;
+  	margin: 0;
+}
+
+body .overridden input[type="text"], 
+body .overridden input[type="password"], 
+body .overridden input[type="datetime"], 
+body .overridden input[type="datetime-local"], 
+body .overridden input[type="date"], 
+body .overridden input[type="month"], 
+body .overridden input[type="time"], 
+body .overridden input[type="week"], 
+body .overridden input[type="number"], 
+body .overridden input[type="email"], 
+body .overridden input[type="url"], 
+body .overridden input[type="search"], 
+body .overridden input[type="tel"], 
+body .overridden input[type="color"], 
+body .overridden input[type="text"]:focus, 
+body .overridden input[type="password"]:focus, 
+body .overridden input[type="datetime"]:focus, 
+body .overridden input[type="datetime-local"]:focus, 
+body .overridden input[type="date"]:focus, 
+body .overridden input[type="month"]:focus, 
+body .overridden input[type="time"]:focus, 
+body .overridden input[type="week"]:focus, 
+body .overridden input[type="number"]:focus, 
+body .overridden input[type="email"]:focus, 
+body .overridden input[type="url"]:focus, 
+body .overridden input[type="search"]:focus, 
+body .overridden input[type="tel"]:focus, 
+body .overridden input[type="color"]:focus, 
+ {
+	color: #200;	
+}
+
+.settings .setting.overridden.string input[type=text] {
+	background: #600;
 }
 
 body input[type="text"]:focus, body input[type="password"]:focus, body input[type="datetime"]:focus, body input[type="datetime-local"]:focus, body input[type="date"]:focus, body input[type="month"]:focus, body input[type="time"]:focus, body input[type="week"]:focus, body input[type="number"]:focus, body input[type="email"]:focus, body input[type="url"]:focus, body input[type="search"]:focus, body input[type="tel"]:focus, body input[type="color"]:focus {
@@ -845,26 +1021,64 @@ body input[type="text"]:focus, body input[type="password"]:focus, body input[typ
 }
 
 .ember-application *, .ember-application *:before, .ember-application *:after {
+/*	box-sizing: content-box;*/
+}
+
+
+.ember-application,
+.select2-container, 
+.select2-drop, 
+.select2-search, 
+.select2-search input {
 	box-sizing: content-box;
 }
 
 .settings .setting.overridden h3,
-.topic-list.categories a.title {
+.topic-list.categories a.title,
+.settings .setting.overridden.string input[type=text],
+.btn-danger,
+nav.post-controls button.create,
+.select2-drop {
 	color: #fff2cb;
+}
+
+.nav-stacked {
+	background-color: #200;
 }
 
 .nav-stacked > li {
 	border-bottom: 1px solid #600;
 }
 
-.btn, .nav-stacked > li
+.btn,
+.nav-stacked > li
 .admin-controls .nav.nav-pills li.active a,
-.dashboard-stats.detected-problems .problem-messages .btn {
+.dashboard-stats.detected-problems .problem-messages .btn,
+.content-list ul li a  {
 	background-color: #200;
 }
 
-.btn:hover, .nav-stacked > li:hover, .select2-container-multi .select2-choices, .admin-controls .nav.nav-pills li.active a, .admin-controls .nav.nav-pills li.active a:hover {
-	background-color: #600;
+.btn:hover, 
+.nav-stacked > li:hover, 
+.select2-container-multi .select2-choices, 
+.admin-controls .nav.nav-pills li.active a, 
+.admin-controls .nav.nav-pills li.active a:hover,
+nav.post-controls button.create:hover {
+	/*background-color: #600;*/
+}
+
+body input[disabled], 
+body select[disabled], 
+body textarea[disabled], 
+body input[readonly], 
+body select[readonly], 
+body textarea[readonly] {
+	background: #644;
+	color: #ccc2a5;
+}
+
+.badges > div:nth-of-type(2) > div {
+	margin-left: 15px;
 }
 
 .settings .setting .desc {
@@ -886,6 +1100,11 @@ body input[type="text"]:focus, body input[type="password"]:focus, body input[typ
 	color: rgba(255, 228, 150, .75);
 }
 
+.btn[href],
+body .bootbox.modal .modal-footer a.btn-primary {
+	color: rgb(255, 228, 150);
+}
+
 .admin-content.boxed {
 	height: auto;
 }
@@ -903,18 +1122,67 @@ body input[type="text"]:focus, body input[type="password"]:focus, body input[typ
 }
 
 a:hover {
-	color: #fff;
+	  color: rgb(255, 242, 203);
+}
+
+body .boxed.white {
+	background-color: transparent;
 }
 
 .ember-application {
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-	background: #200;
+	height: calc(100% - 281px)
 }
 
+.topic-map {
+	background-color: #400;
+}
+
+.topic-map .buttons .btn {
+	background-color: #200;
+	border-bottom-color:  #600;	
+}
+
+.topic-map .buttons .btn:hover {
+	background-color: #600;
+	border-bottom-color:  #600;	
+}
+
+.list-controls .category-breadcrumb li.bar>.badge-category:hover {
+	background-color: #800 !important;
+	color: #fff !important;
+}
+
+.list-controls .category-breadcrumb li.bar>.badge-category {
+	background-color: #800 !important;
+	color: #fff !important;
+}
+
+.btn:focus, 
+.nav-stacked > li:focus, 
+.select2-container-multi .select2-choices, 
+.admin-controls .nav.nav-pills li.active a, 
+.admin-controls .nav.nav-pills li.active a:focus,
+nav.post-controls button.create:focus,
+.admin-nav li a.active,
+.nav-pills > li > a:focus,
+.content-list ul li a:focus,
+.list-controls .category-dropdown-menu .badge-wrapper.bar:focus,
+.list-controls .category-dropdown-menu .badge-category.home:focus,
+.topic-map .buttons .btn:focus {
+	outline-color: #200; 
+}
+
+.ember-application > .ember-view {
+	/*width: 90%;*/
+	}
+
 .ember-application .container {
-	max-width: 80%;
+	box-sizing: inherit;
+	background: rgba(62, 0, 0, 1);
+}
+
+.ember-application .container.list-container {
+	padding-top: 0;
 }
 
 .topic-list>tbody>tr:nth-child(even) {
@@ -925,3 +1193,60 @@ a:hover {
 	background-color: #330a0a;
 }
 
+.show-topic-admin {
+	top: 401px;
+	right: 20px;
+}
+
+.topic-admin-menu button {
+	box-sizing: border-box;
+}
+
+#topic-progress-expanded,
+#topic-progress {
+	width: 145px;
+	box-sizing: border-box;
+}
+
+
+#topic-progress-expanded .ember-text-field {
+	box-sizing: content-box;
+}
+
+.ember-application h1, 
+.ember-application h2, 
+.ember-application h3, 
+.ember-application h4, 
+.ember-application h5, 
+.ember-application h6 {
+	clear: none;
+}
+
+#reply-control,
+body .grippie{
+	background-color: #600;
+}
+
+body .grippie {
+	border-color: #600;
+}
+
+#create-topic {
+	margin-right: 10px;
+}
+
+ol.category-breadcrumb {
+	margin-left: 10px;
+}
+
+.d-header {
+	background: transparent;
+	box-shadow: none;
+	padding-top: 0;
+	margin-bottom: 0;
+}
+
+.d-header > .container {
+	-webkit-box-shadow: 0 1px 5px 0 #000000;
+	box-shadow: 0 1px 10px 0 #000000;	
+}
