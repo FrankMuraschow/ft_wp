@@ -150,11 +150,18 @@ code, kbd, pre, samp {
 	font-size: 1em;
 }
 
+body select,
+body textarea {
+	color: #200;
+	background-color: rgb(255, 228, 150);
+}
+
 button, input, optgroup, select, textarea {
 	color: inherit;
 	font: inherit;
 	margin: 0;
 }
+
 
 button {
 	overflow: visible;
@@ -385,6 +392,7 @@ html, body {
 
 #main-outlet {
 	padding-top: 55px;
+	overflow-x: hidden;
 }
 
 .alert {	
@@ -491,7 +499,8 @@ nav a:hover, nav a:active {
 	background-color: #400;
 }
 
-a {
+a,
+.groups .group-link {
 	color: #fff;
 }
 
@@ -737,6 +746,10 @@ display: none;
 	margin: 0 0 1.5em;
 }
 
+.entry-footer > span {
+	margin: 0 1.5em;
+}
+
 /*--------------------------------------------------------------
  10.2 Asides
  --------------------------------------------------------------*/
@@ -886,6 +899,7 @@ embed, iframe, object {
 .btn[href]:hover,
 .nav-stacked > li:hover,
 .nav-stacked > li > a:hover, 
+.nav-stacked .active > a,
 .admin-controls .nav.nav-pills li.active a, 
 .admin-controls .nav.nav-pills li.active a:hover,
 .admin-nav li a.active,
@@ -942,7 +956,11 @@ nav.post-controls button.like:hover {
 
 #reply-control .wmd-controls #wmd-input, 
 #reply-control .wmd-controls #wmd-preview-scroller, 
-#reply-control .wmd-controls #wmd-preview {
+#reply-control .wmd-controls #wmd-preview,
+.modal.history-modal .diff-del,
+.modal.history-modal del,
+.modal.history-modal .diff-ins,
+.modal.history-modal ins {
 	color: #fff;
 	background-color: #400;	
 }
@@ -1020,8 +1038,10 @@ body input[type="text"]:focus, body input[type="password"]:focus, body input[typ
 	color: inherit;
 }
 
-.ember-application *, .ember-application *:before, .ember-application *:after {
-/*	box-sizing: content-box;*/
+.ember-application *
+/*, .ember-application *:before, .ember-application *:after*/ 
+{
+	box-sizing: content-box;
 }
 
 
@@ -1105,7 +1125,8 @@ body .bootbox.modal .modal-footer a.btn-primary {
 	color: rgb(255, 228, 150);
 }
 
-.admin-content.boxed {
+.admin-content.boxed,
+.modal.history-modal .modal-header {
 	height: auto;
 }
 
@@ -1250,3 +1271,68 @@ ol.category-breadcrumb {
 	-webkit-box-shadow: 0 1px 5px 0 #000000;
 	box-shadow: 0 1px 10px 0 #000000;	
 }
+
+aside.quote .title,
+blockquote
+{
+	border-left-color: #800;
+}
+
+aside.quote .title,
+pre {
+	background: #600;
+}
+
+blockquote,
+pre code {
+		color: #fff;
+		background: #800;
+}
+
+.uploaded-image-preview,
+.user-main .about.collapsed-info .details {
+	background-color: #800;
+}
+
+.user-main .about .details .primary {
+	color: rgb(255, 228, 150);
+}
+
+.user-navigation > h3,
+.user-archive {
+	margin: 20px 0 20px 10px;
+}
+
+.user-main .about .secondary,
+.user-main .about .secondary dt {
+	color: #fff2cb;
+	background-color: #200;
+}
+
+.user-main .about .details {
+	background: #600;
+}
+
+.deleted .topic-body {
+	rgba(255, 0, 0, 0.2);
+}
+
+.modal.history-modal img.diff-ins, .modal.history-modal code.diff-ins {
+	border-color: #800; 
+}
+
+.gap,
+.modal.history-modal #revision-details {
+	background-color: #600;
+}
+#user-card .card-content,
+.user-main .user-content {
+	background-color: #200;
+	border: 1px dashed rgb(255, 228, 150);
+}
+
+#topic-progress-expanded button.full,
+#topic-progress-expanded .jump-form {
+	box-sizing: border-box;
+}
+

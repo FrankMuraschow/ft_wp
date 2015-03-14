@@ -1,2 +1,4 @@
-$('#login_error').appendTo('form#loginform');
-$('.login .message').appendTo('form#loginform');
+jQuery(document).ready(function() {
+ jQuery('#login_error').appendTo('#login > form');
+ jQuery('.login .message').appendTo('#login > form');
+});
