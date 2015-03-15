@@ -646,8 +646,14 @@ a:hover, a:active {
 		display: block;
 	}
 
-	.main-navigation ul {
+	.main-navigation ul,
+	#ft-header-banner {
 		display: none;
+	}
+	
+	body {
+		background-image: none;		
+		background: #200;
 	}
 }
 
