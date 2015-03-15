@@ -15,7 +15,7 @@ Layout: Content-Sidebar
 	float: right;
 	overflow: hidden;
 	width: 15%;
-	margin-right: 5%;
+	margin: 20px 5% 0 0;
 }
 .site-footer {
 	clear: both;

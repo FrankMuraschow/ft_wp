@@ -1,6 +1,5 @@
 AddHandler php56-cgi .php
 
-RedirectMatch ^/$ /single-shoutbox/
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
