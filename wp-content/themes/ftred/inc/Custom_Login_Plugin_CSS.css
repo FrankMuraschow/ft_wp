@@ -27,7 +27,8 @@
 }
 
 .login .message,
-.login #reg_passmail{
+.login #reg_passmail,
+.login .cptch_block{
     color: #fff;
 }
 

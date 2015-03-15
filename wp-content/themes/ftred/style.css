@@ -60,6 +60,30 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
 	display: block;
 }
 
+article {
+	background-color: #200;	
+}
+
+#comments,
+#comments article {
+	background-color: #100;
+}
+
+article > header,
+#comments {
+	padding: 0 10px 5px 10px;
+}
+
+article > header {
+	border-bottom: 1px dashed rgba(255, 228, 150, 0.5);
+}
+
+#comments #respond,
+article > header {
+	background-color: #500;
+		
+}
+
 audio, canvas, progress, video {
 	display: inline-block;
 	vertical-align: baseline;
@@ -363,6 +387,14 @@ table {
 	width: 100%;
 }
 
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a {
+	text-decoration: none; 
+}
+
+
 /*--------------------------------------------------------------
  3.1 Elements - FT Customization
  --------------------------------------------------------------*/
@@ -391,8 +423,12 @@ html, body {
 }
 
 #main-outlet {
-	padding-top: 55px;
+	padding-top: 60px;
 	overflow-x: hidden;
+}
+
+#main-outlet > .container {
+	padding-top: 5px;
 }
 
 .alert {	
@@ -556,7 +592,7 @@ a:hover, a:active {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
-	top: 1.5em;
+	top: 3.5em;
 	left: -999em;
 	z-index: 99999;
 }
@@ -741,9 +777,17 @@ display: none;
 	margin: 1.5em 0 0;
 }
 
+.entry-content {
+	padding: 0 10px;
+}
+
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.entry-footer {	
+	padding: 10px;
 }
 
 .entry-footer > span {
@@ -893,8 +937,34 @@ embed, iframe, object {
 	padding-left: 0px;
 }
 
+
+button:hover, 
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"] {
+	box-shadow: none;
+	/*padding: 10px;*/
+}
+
+#comments input[type="button"], 
+#comments input[type="reset"], 
+#comments input[type="submit"] {
+	margin: 5px 0;
+	
+}
+
+
+#secondary {
+	
+}
+
+
 /* THE BIG BUTTON HOVER */
 
+button:hover, 
+input[type="button"]:hover, 
+input[type="reset"]:hover, 
+input[type="submit"]:hover,
 .btn:hover, 
 .btn[href]:hover,
 .nav-stacked > li:hover,
@@ -1193,6 +1263,22 @@ nav.post-controls button.create:focus,
 	outline-color: #200; 
 }
 
+.list-controls .btn {
+	margin-right: 8px;
+}
+
+.d-header .icons {
+	margin: 0 8px;
+}
+
+.list-controls .category-dropdown-menu {
+	overflow: hidden;
+}
+
+.alert-info {
+	display: none;
+}
+
 .ember-application > .ember-view {
 	/*width: 90%;*/
 	}
@@ -1303,6 +1389,7 @@ pre code {
 	margin: 20px 0 20px 10px;
 }
 
+
 .user-main .about .secondary,
 .user-main .about .secondary dt {
 	color: #fff2cb;
@@ -1336,3 +1423,6 @@ pre code {
 	box-sizing: border-box;
 }
 
+.category-color-editor .colors-container .colorpicker {
+	padding: 0;
+}
