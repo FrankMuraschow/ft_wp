@@ -84,6 +84,10 @@ article > header {
 		
 }
 
+article.sticky > header {
+	background: #004405;
+}
+
 audio, canvas, progress, video {
 	display: inline-block;
 	vertical-align: baseline;
@@ -1431,4 +1435,22 @@ pre code {
 
 .category-color-editor .colors-container .colorpicker {
 	padding: 0;
+}
+
+.poll-ui table {
+	margin-left: 5px;
+}
+
+.poll-ui tr.active {
+	background-color: #600;
+}
+
+.poll-ui td.radio input {
+	margin-left: 0 !important;
+}
+
+
+/* SPOILER ALERT PLUGIN */
+.spoiled.clicked {
+	text-shadow: rgb(255, 228, 150) 0 0 0 !important;
 }
